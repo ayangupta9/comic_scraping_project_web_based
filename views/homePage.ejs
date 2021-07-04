@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <title>ComicScraper</title>
+    <style>
+        body {
+            background-color: #99d1ff;
+            justify-content: center;
+            margin-top: 2rem;
+            height: 100%;
+        }
+
+        .curved-card {
+            box-shadow:
+                0px 0px 50px -15px #002488d8;
+            display: block;
+            margin-block: 1em;
+            border-radius: 2em;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        h1.mainheader {
+            display: block;
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: white;
+            margin: auto;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: monospace;
+        }
+
+        #comicsearchsubmit {
+            text-decoration: none;
+            display: block;
+            margin: auto;
+            border-radius: 20px;
+            padding: 7px;
+            text-transform: uppercase;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 10px;
+            width: 14em;
+        }
+
+        .textinputholder {
+            display: block;
+            margin: auto;
+        }
+
+        #comicsearchname {
+            display: flex;
+            margin: auto;
+            margin-top: 8px;
+            width: 100%;
+            padding: 0.5em;
+        }
+
+        .wrapper {
+            text-align: center;
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
+
+        #logoholderimg {
+            border-radius: 20px;
+            display: block;
+            margin: auto;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        a.sourceAnchor {
+            text-decoration: none;
+        }
+
+        #searchlabel {
+            width: 100%;
+            font-size: 1.25em;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+        .btn {
+            padding-left: 25px;
+            padding-right: 25px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 50px;
+        }
+
+        #footerholder {
+            background-color: #ffffff;
+            margin: 1em;
+            padding: 0.5em;
+            border-radius: 100px;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="footerholder">
+        <%- include('partials/contribution.ejs')%>
+    </div>
+
+    <h1 class="display-2 text-center mainheader">
+        COMIC SCRAPER
+    </h1>
+
+    <div class="wrapper row">
+        <div class="container curved-card">
+            <div id="logoholder">
+                <img id="logoholderimg" src="https://logosbynick.com/wp-content/uploads/2019/03/Step-5.png" alt="">
+            </div>
+
+            </br>
+            <a class="btn btn-dark" target="_blank" href="http://readallcomics.com">Source: @readallcomics.com</a>
+            </br>
+            </br>
+            <div class="inputcontainer">
+                <form id="search-form" method="GET" action="/search">
+                    <label id="searchlabel" for="comicsearchname">Enter comic book name </label></br>
+                    <div class="col-8 textinputholder">
+                        <input type="text" name="comicsearchname" id="comicsearchname">
+                    </div>
+                    <input type="submit" id="comicsearchsubmit" class="btn-dark" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="../public/homePage.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

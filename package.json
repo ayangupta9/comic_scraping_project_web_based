@@ -1,0 +1,26 @@
+{
+  "name": "comics_scrapping_project",
+  "version": "1.0.0",
+  "description": "Scraps comic strips from a website and presents in the form of pdf (Educational purpose only)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "comic",
+    "scraping",
+    "node",
+    "pdf"
+  ],
+  "author": "Ayan Gupta",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.10",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.9",
+    "pdfkit": "^0.12.1"
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Categories and Issues Results</title>
+
+    <style>
+        body {
+            background-color: #99d1ff;
+            justify-content: center;
+            margin-top: 2rem;
+            height: 100%;
+        }
+
+        .wrapper {
+            text-align: center;
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
+
+        .list {
+            display: block;
+            margin: auto;
+            width: 60%;
+        }
+
+        .btn {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 2em;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: rgb(160, 160, 160);
+            border: 1px solid white;
+            color: white;
+        }
+
+        .header {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: monospace;
+        }
+
+        .curved-card {
+            box-shadow:
+                0px 0px 50px -15px #002488d8;
+            display: block;
+            margin-block: 1em;
+            border-radius: 2em;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        #footerholder {
+            background-color: #ffffff;
+            margin: 1em;
+            padding: 0.5em;
+            border-radius: 100px;
+            position: absolute;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/homeredirect.ejs') %>
+    <div id="footerholder">
+        <%- include('partials/contribution.ejs')%>
+    </div>
+
+    <div class="wrapper">
+        <div class="container curved-card">
+            <h1 class="header">CATEGORIES AND ISSUES</h1>
+            
+                <div class="list">
+                    <% for(let i=0;i<data.length;i++){ %>
+                        <div class="row">
+                            <a class="btn" href=<%=data[i].link%>>
+                                <%= (data[i].comicName) %>
+                            </a>
+                        </div>
+                        <%}%>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>
+        <%= data.issueName %>
+    </title>
+
+    <style>
+        body {
+            background-color: #99d1ff;
+            justify-content: center;
+            margin-top: 2rem;
+            height: 100%;
+        }
+
+        .wrapper {
+            text-align: center;
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
+
+        .curved-card {
+            box-shadow:
+                0px 0px 50px -15px #002488d8;
+            display: block;
+            margin-block: 1em;
+            border-radius: 2em;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .comicName {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: monospace;
+        }
+
+        .innerholder {
+            width: 50%;
+            display: block;
+            margin: auto;
+            justify-content: center;
+        }
+
+        #viewbutton {
+            border-radius: 2em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        .comicpage {
+            width: 100%;
+        }
+
+        #footerholder {
+            background-color: #ffffff;
+            margin: 1em;
+            padding: 0.5em;
+            border-radius: 100px;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include('partials/homeredirect') %>
+
+    <div id="footerholder">
+        <%- include('partials/contribution.ejs')%>
+    </div>
+
+    <div class="wrapper">
+        <div class="container curved-card">
+            <h1 class="comicName">
+                <%= data.seriesName%>
+            </h1>
+            <h3 class="comicName">
+                <%= data.issueName%>
+            </h3>
+            </br>
+            <div class="buttonholder">
+                <div class="col-4 innerholder">
+                    <a href="/downloadcomic" target="_blank" onclick="onclickFunction()" class=" btn btn-dark"
+                        id="viewbutton">VIEW AS
+                        PDF</a>
+                </div>
+            </div>
+            </br>
+            <div class="container">
+                <% for(let i=0; i<data.images.length ;i++) { %>
+                    <div class="row">
+                        <img class="comicpage" src=<%=data.images[i] %> alt=<%= `page number ${i}` %>>
+                    </div>
+                    <%}%>
+            </div>
+            </br>
+            <h1>THE END</h1>
+            </br>
+        </div>
+    </div>
+    </br>
+    <script>
+        async function onclickFunction() {
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
